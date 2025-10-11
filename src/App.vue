@@ -15,6 +15,13 @@ import HelloWorld from './components/HelloWorld.vue'
 </template>
 
 <style scoped>
+
+@reference "./style.css";
+
+.custom-class {
+  @apply border rounded p-3;
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;
