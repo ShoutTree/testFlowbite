@@ -1,6 +1,11 @@
 <template>
+  <button @click="toggleDark" class="mb-16 border p-2 rounded bg-gray-500 hover:bg-red-700 dark:hover:bg-blue-700">
+    Toggle Dark Mode
+  </button>
 
-  <fwb-alert closable icon type="warning">
+  <fwb-alert closable icon type="warning" 
+  class="bg-yellow-50 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200"
+  >
     Warning
   </fwb-alert>
 
@@ -79,4 +84,21 @@
 
 <script setup>
 import { FwbAlert, FwbButton } from 'flowbite-vue'
+
+const toggleDark = () => {
+  document.documentElement.classList.toggle('dark')
+}
 </script>
+
+<style>
+html.dark .fwb-alert.fwb-alert-warning {
+  /* This has extremely high specificity and should override internal utility classes */
+  @apply bg-yellow-900 text-yellow-200 !important;
+}
+
+html.dark .fwb-alert.fwb-alert-success {
+  @apply bg-green-900 text-green-200 !important;
+}
+
+/* ... and so on for other types ... */
+</style>
