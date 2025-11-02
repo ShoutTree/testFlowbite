@@ -1,7 +1,4 @@
 <template>
-  <button @click="toggleDark" class="mb-16 border p-2 rounded bg-gray-500 hover:bg-red-700 dark:hover:bg-blue-700">
-    Toggle Dark Mode
-  </button>
   <fwb-accordion>
     <fwb-accordion-panel
       v-for="(panel, i) in panels"
