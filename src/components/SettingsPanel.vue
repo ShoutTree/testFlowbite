@@ -39,6 +39,7 @@
     { name: 'Alert', path: '/' },
     { name: 'Accordion', path: '/Accordion' },
     { name: 'AccordionDarkHover', path: '/AccordionDarkHover' },
+    { name: 'Avatar', path: '/Avatar' },
     
   ]
   
