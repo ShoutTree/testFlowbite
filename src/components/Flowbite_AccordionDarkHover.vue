@@ -1,5 +1,6 @@
+<!-- Flowbite_AccordionDarkHover.vue 保持不变 -->
 <template>
-  <fwb-accordion>
+  <fwb-accordion class="w-full">
     <fwb-accordion-panel
       v-for="(panel, i) in panels"
       :key="i"
@@ -14,7 +15,7 @@
       >
         Item {{ i+1 }} ({{ panel.isVisible ? 'open' : 'closed' }})
       </fwb-accordion-header>
-      <fwb-accordion-content class="border-t border-t-cyan-700 text-center ">
+      <fwb-accordion-content class="border-t border-t-cyan-700 text-center">
         <p>{{ panel.content }}</p>
       </fwb-accordion-content>
     </fwb-accordion-panel>
@@ -31,12 +32,8 @@ import {
 } from 'flowbite-vue'
 
 const panels = ref([
-  { isVisible: false, content: 'Lorem ipsum...' },
+  { isVisible: false, content: 'Flowbite is an open-source library of interactive components built on top of Tailwind CSS...' },
   { isVisible: false, content: 'Lorem ipsum...' },
   { isVisible: false, content: 'Lorem ipsum...' },
 ])
-
-const toggleDark = () => {
-  document.documentElement.classList.toggle('dark')
-}
 </script>

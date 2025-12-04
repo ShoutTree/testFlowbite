@@ -1,52 +1,55 @@
-<!-- SettingsPanel.vue -->
 <template>
-    <div class="p-4 border-r border-gray-300 dark:border-gray-700">
-      <button
-        @click="toggle"
-        class="px-4 py-2 rounded bg-cyan-600 hover:bg-cyan-700 text-white"
+  <div class="h-full flex flex-col">
+    <button
+      @click="toggle"
+      class="px-4 py-2 rounded bg-cyan-600 hover:bg-cyan-700 text-white w-full mb-6"
+    >
+      Toggle Dark Mode
+    </button>
+
+    <div class="mt-4">
+      <label for="pageSelect" class="block mb-1 dark:text-white">Go to page:</label>
+      <select
+        id="pageSelect"
+        v-model="selectedRoute"
+        @change="navigate"
+        class="border rounded p-2 dark:bg-gray-800 dark:border-gray-600 dark:text-white w-full"
       >
-        Toggle Dark Mode
-      </button>
-  
-      <div class="mt-4">
-        <label for="pageSelect" class="block mb-1">Go to page:</label>
-        <select
-          id="pageSelect"
-          v-model="selectedRoute"
-          @change="navigate"
-          class="border rounded p-2 dark:bg-gray-800 dark:border-gray-600"
-        >
-          <option v-for="page in pages" :key="page.path" :value="page.path">
-            {{ page.name }}
-          </option>
-        </select>
-      </div>
+        <option v-for="page in pages" :key="page.path" :value="page.path">
+          {{ page.name }}
+        </option>
+      </select>
     </div>
-  </template>
-  
-  <script setup lang="ts">
-  import { ref } from 'vue'
-  import { useRouter, useRoute } from 'vue-router'
-  
-  const emit = defineEmits<{ (e: 'toggleDarkMode'): void }>()
-  const router = useRouter()
-  const route = useRoute()
-  
-  const toggle = () => emit('toggleDarkMode')
-  
-  // Define all available routes
-  const pages = [
-    { name: 'Alert', path: '/' },
-    { name: 'Accordion', path: '/Accordion' },
-    { name: 'AccordionDarkHover', path: '/AccordionDarkHover' },
-    { name: 'Avatar', path: '/Avatar' },
-    
-  ]
-  
-  const selectedRoute = ref(route.path)
-  
-  function navigate() {
-    router.push(selectedRoute.value)
+  </div>
+</template>
+
+<script setup lang="ts">
+import { ref, watch } from 'vue'
+import { useRouter, useRoute } from 'vue-router'
+
+const emit = defineEmits<{ (e: 'toggleDarkMode'): void }>()
+const router = useRouter()
+const route = useRoute()
+
+const toggle = () => emit('toggleDarkMode')
+
+const pages = [
+  { name: 'Alert', path: '/' },
+  { name: 'Accordion', path: '/Accordion' },
+  { name: 'AccordionDarkHover', path: '/AccordionDarkHover' },
+  { name: 'Avatar', path: '/Avatar' },
+]
+
+const selectedRoute = ref(route.path)
+
+watch(
+  () => route.path,
+  (newPath) => {
+    selectedRoute.value = newPath
   }
-  </script>
-  
+)
+
+function navigate() {
+  router.push(selectedRoute.value)
+}
+</script>
