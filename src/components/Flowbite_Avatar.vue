@@ -1,7 +1,10 @@
 <template>
   <div class="w-full">
     <div class="flex flex-col">
-        <div class="mb-16 flex justify-center space-x-4">
+        <label class="block mb-2 font-medium text-gray-100 dark:text-gray-300 text-left">
+            不同类型和状态的Avatar
+        </label>
+        <div class="mb-16 flex justify-center space-x-4 mb-16">
             <fwb-avatar img="/images/Ronaldo_avatar.jpg" />
             <fwb-avatar img="/images/Ronaldo_avatar.jpg" rounded />
             <fwb-avatar bordered img="/images/Ronaldo_avatar.jpg" />
@@ -21,7 +24,12 @@
             status="offline" />
         </div>
 
-        <div class="flex justify-center items-center space-x-4">
+        <hr class="my-8 border-gray-200/20 dark:border-gray-200/20 border-t-[0.5px]" />
+
+        <label class="block mb-2 font-medium text-gray-100 dark:text-gray-300 text-left">
+            不同大小的Avatar
+        </label>
+        <div class="flex justify-center items-center space-x-4 mb-16">
             <fwb-avatar img="/images/Ronaldo_avatar.jpg" 
             size="xs"
             status="online" />
@@ -45,16 +53,201 @@
             status="offline" />
         </div>
 
-        <div class="mt-16 flex justify-center space-x-4">
+        <hr class="my-8 border-gray-200/20 dark:border-gray-200/20 border-t-[0.5px]" />
+
+        <label class="block mb-2 font-medium text-gray-100 dark:text-gray-300 text-left">
+            Alternative text
+        </label>
+        <div class="mt-16 flex justify-center space-x-4 mb-16">
             <fwb-avatar img="/images/Ronaldo_avatar1.jpg"         
             alt="Alternative text"
             size="lg"
             status="online"/>
+        </div>
+
+        <hr class="my-8 border-gray-200/20 dark:border-gray-200/20 border-t-[0.5px]" />
+
+        <label class="block mb-2 font-medium text-gray-100 dark:text-gray-300 text-left">
+            FwbAvatarStack:叠加的Avatar
+        </label>
+        <div class="grid gap-2">
+            <fwb-avatar-stack>
+            <fwb-avatar img="/images/width_256/armor_stand.jpg" rounded stacked />
+            <fwb-avatar img="/images/width_256/breakfast.jpg" rounded stacked />
+            <fwb-avatar img="/images/width_256/deer_hog_croc.jpg" rounded stacked />
+            <fwb-avatar img="/images/width_256/flower.jpeg" rounded stacked />
+            <fwb-avatar img="/images/width_256/model_bears.jpg" rounded stacked />
+            </fwb-avatar-stack>
+            <fwb-avatar-stack>
+            <fwb-avatar img="/images/width_256/model_plane.jpg" rounded stacked />
+            <fwb-avatar img="/images/width_256/old_university.jpg" rounded stacked />
+            <fwb-avatar img="/images/width_256/seashore.jpeg" rounded stacked />
+            <fwb-avatar img="/images/width_256/shanghai.jpeg" rounded stacked />
+            <fwb-avatar img="/images/width_256/sunflower.jpeg" rounded stacked />
+            <fwb-avatar img="/images/width_256/sunset_clouds.jpeg" rounded stacked />
+            <fwb-avatar img="/images/width_256/sunset_glow.jpeg" rounded stacked />
+            <fwb-avatar img="/images/width_256/vine.jpeg" rounded stacked />
+            <fwb-avatar img="/images/width_256/water_lily.jpeg" rounded stacked />
+            <fwb-avatar-stack-counter href="#" total="99" />
+            </fwb-avatar-stack>
+
+            <label class="block mb-2 font-medium text-gray-100 dark:text-gray-300 text-left">
+            Control distance of avatars, gap-big
+            </label>
+            <div class="avatar-stack-gap-big">
+                <fwb-avatar-stack>
+                    <fwb-avatar img="/images/width_256/water_lily.jpeg"  stacked />
+                <fwb-avatar img="/images/width_256/seashore.jpeg" rounded stacked />
+                <fwb-avatar img="/images/width_256/sunset_clouds.jpeg" rounded stacked />
+                </fwb-avatar-stack>
+            </div>
+
+            <label class="block mb-2 font-medium text-gray-100 dark:text-gray-300 text-left">
+            Control distance of avatars, gap-small
+            </label>
+            <div class="avatar-stack-gap-small">
+                <fwb-avatar-stack>
+                <fwb-avatar img="/images/width_256/shanghai.jpeg" rounded stacked />
+                <fwb-avatar img="/images/width_256/sunflower.jpeg" rounded stacked />
+                <fwb-avatar img="/images/width_256/seashore.jpeg" rounded stacked />
+                </fwb-avatar-stack>
+            </div>
+
+        </div>
+
+        <hr class="my-8 border-gray-200/20 dark:border-gray-200/20 border-t-[0.5px]" />
+
+        <label class="block mb-2 font-medium text-gray-100 dark:text-gray-300 text-left">
+            Placeholder icon
+        </label>
+        <div class="flex justify-center space-x-4 mb-16">
+            <fwb-avatar />
+            <fwb-avatar rounded />
+        </div>
+
+        <hr class="my-8 border-gray-200/20 dark:border-gray-200/20 border-t-[0.5px]" />
+        <label class="block mb-2 font-medium text-gray-100 dark:text-gray-300 text-left">
+        Placeholder initials
+        </label>
+        <div class="flex justify-center space-x-4 mb-16">
+            <!-- 自定义类名，用于样式定位 -->
+            <fwb-avatar initials="JD" class="avatar-primary" />
+            <fwb-avatar initials="JD" rounded class="avatar-secondary" />
+            <fwb-avatar initials="天大地大何处是我家" rounded class="avatar-custom" />
+            
+            <div class="avatar-secondary">
+                <fwb-avatar initials="天大地大何处是我家" rounded />
+            </div>
+            <div class="avatar-primary1">
+                <fwb-avatar initials="JD" />
+            </div>
+        </div>
+
+        <hr class="my-8 border-gray-200/20 dark:border-gray-200/20 border-t-[0.5px]" />
+
+        <label class="block mb-2 font-medium text-gray-100 dark:text-gray-300 text-left">
+            Alternative Placeholder Icon
+        </label>
+        <div class="vp-raw flex justify-center space-x-4 mb-16">
+            <fwb-avatar>
+            <template #placeholder>
+                <svg class="w-12 h-12" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </template>
+            </fwb-avatar>
+            <fwb-avatar rounded>
+            <template #placeholder>
+                <svg class="w-12 h-12" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </template>
+            </fwb-avatar>
         </div>
     </div>
   </div>
 </template>
 
 <script setup>
-    import { FwbAvatar } from 'flowbite-vue'
+    import { FwbAvatar, FwbAvatarStack, FwbAvatarStackCounter  } from 'flowbite-vue'
 </script>
+
+<style>
+/* This is the color under initial and its surrounding. 这是最底层的颜色 */
+.avatar-custom {
+  background-color: #ef4444 !important;
+  color: #fff !important;
+}
+</style>
+
+<style scoped>
+
+/* Override the stack spacing */
+::v-deep(.avatar-stack-gap-big .flex.-space-x-4) {
+  /* Remove Tailwind spacing class effect */
+  margin-left: 0 !important;
+  gap: 0 !important;
+
+  /* Custom spacing you want */
+  display: flex;
+  margin-right: 0;
+}
+
+::v-deep(.avatar-stack-gap-big .relative + .relative) {
+  margin-left: 20px; /* <== adjust this value freely */
+}
+
+
+
+/* Override the stack spacing */
+::v-deep(.avatar-stack-gap-small .flex.-space-x-4) {
+  /* Remove Tailwind spacing class effect */
+  margin-left: 0 !important;
+  gap: 0 !important;
+
+  /* Custom spacing you want */
+  display: flex;
+  margin-right: 0;
+}
+
+::v-deep(.avatar-stack-gap-small .relative + .relative) {
+  margin-left: -30px; /* <== adjust this value freely */
+}
+
+
+/* .avatar-primary bg color*/
+::v-deep(.avatar-primary .flex.w-10.h-10) {
+  background-color: #047a2f !important;
+}
+
+/* .avatar-primary Text color */
+::v-deep(.avatar-primary .font-medium) {
+  color: #cfed0c !important;
+}
+
+
+::v-deep(.avatar-secondary .flex.w-10.h-10) {
+  background-color: #c13bf6 !important;
+}
+
+::v-deep(.avatar-secondary .font-medium) {
+  color: #340101 !important;
+}
+
+
+::v-deep(.avatar-custom .flex.w-10.h-10) {
+  background-color: #4507ef !important;
+}
+
+::v-deep(.avatar-custom .font-medium) {
+  color: #e0f568 !important;
+}
+
+::v-deep(.avatar-primary1 .flex.w-10.h-10) {
+  background-color: #3b82f6 !important;
+}
+
+::v-deep(.avatar-primary1 .font-medium) {
+  color: #fff !important;
+}
+</style>

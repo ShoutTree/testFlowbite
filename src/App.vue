@@ -7,7 +7,7 @@
       </div>
 
       <!-- 2. 路由容器：margin-left 等于 SettingsPanel 宽度，强制占满右侧所有空间 -->
-      <div class="absolute left-64 top-0 bottom-0 right-0 z-10 min-h-screen bg-white/20 dark:bg-gray-900">
+      <div class="fixed left-64 top-0 bottom-0 right-0 z-10 min-h-screen bg-white/20 dark:bg-gray-900 overflow-auto">
         <div class="w-full h-full px-6 py-8">
           <router-view />
         </div>
