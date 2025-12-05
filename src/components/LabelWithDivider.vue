@@ -3,7 +3,10 @@
     <!-- 左对齐 label + 向下箭头 -->
     <label 
       class="block mb-2 font-medium text-gray-100 dark:text-gray-300 text-left flex items-center gap-1.5"
-      :style="{ marginBottom: mb || '0.5rem' }"
+      :style="{
+        marginTop: computedMarginTop, // 传参则生效，无参则为 undefined（即无样式）
+        marginBottom: mb || '0.5rem' 
+      }"
     >
       <!-- 文本 -->
       <span>{{ text }}</span>
@@ -34,6 +37,8 @@
 </template>
 
 <script setup>
+import { computed } from 'vue'
+
 const props = defineProps({
   text: { type: String, required: true }, // label 文本
   mb: { type: String, default: '0.5rem' }, // label 底部间距
@@ -41,6 +46,16 @@ const props = defineProps({
   dividerMargin: { type: String, default: '1rem 0 2rem' }, // 分割线间距
   showDivider: { type: Boolean, default: true }, // 是否显示分割线
   showArrow: { type: Boolean, default: true }, // 🔴 是否显示向下箭头（默认显示）
-  arrowColor: { type: String, default: 'inherit' } // 🔴 箭头颜色（默认继承文字色）
+  arrowColor: { type: String, default: 'inherit' }, // 🔴 箭头颜色（默认继承文字色）
+  marginTop: { type: [String, Number], default: undefined } // 🔴 接收marginTop（支持字符串/数值，无默认值）
+
+})
+
+// 解析 marginTop：数值 → 对应 rem（Tailwind mt-n 规则：n*0.25rem）
+const computedMarginTop = computed(() => {
+  if (!props.marginTop) return undefined
+  if (typeof props.marginTop === 'string') return props.marginTop
+  // 数值：16 → 16*0.25rem = 4rem（对应 mt-16）
+  return `${props.marginTop * 0.25}rem`
 })
 </script>

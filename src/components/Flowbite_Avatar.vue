@@ -2,7 +2,7 @@
   <div class="w-full">
     <div class="flex flex-col">
         <LabelWithDivider text="不同类型和状态的Avatar" />
-        <div class="mb-16 flex justify-center space-x-4 mb-16">
+        <div class=" flex justify-center space-x-4 ">
             <fwb-avatar img="/images/Ronaldo_avatar.jpg" />
             <fwb-avatar img="/images/Ronaldo_avatar.jpg" rounded />
             <fwb-avatar bordered img="/images/Ronaldo_avatar.jpg" />
@@ -22,9 +22,9 @@
             status="offline" />
         </div>
 
-        <LabelWithDivider text="不同大小的Avatar" />
+        <LabelWithDivider text="不同大小的Avatar" :marginTop="16"/>
 
-        <div class="flex justify-center items-center space-x-4 mb-16">
+        <div class="flex justify-center items-center space-x-4 ">
             <fwb-avatar img="/images/Ronaldo_avatar.jpg" 
             size="xs"
             status="online" />
@@ -48,16 +48,16 @@
             status="offline" />
         </div>
 
-        <LabelWithDivider text="Alternative text" />
+        <LabelWithDivider text="Alternative text" :marginTop="16"/>
 
-        <div class="mt-16 flex justify-center space-x-4 mb-16">
+        <div class="mt-16 flex justify-center space-x-4 ">
             <fwb-avatar img="/images/Ronaldo_avatar1.jpg"         
             alt="Alternative text"
             size="lg"
             status="online"/>
         </div>
 
-        <LabelWithDivider text="FwbAvatarStack:叠加的Avatar" />
+        <LabelWithDivider text="FwbAvatarStack:叠加的Avatar" :marginTop="16"/>
         <div class="grid gap-2">
             <fwb-avatar-stack>
             <fwb-avatar img="/images/width_256/armor_stand.jpg" rounded stacked />
@@ -89,7 +89,7 @@
             </div>
 
             <LabelWithDivider text="Control distance of avatars, gap-small" :show-divider="false"/>
-            <div class="avatar-stack-gap-small mb-16">
+            <div class="avatar-stack-gap-small">
                 <fwb-avatar-stack>
                 <fwb-avatar img="/images/width_256/shanghai.jpeg" rounded stacked />
                 <fwb-avatar img="/images/width_256/sunflower.jpeg" rounded stacked />
@@ -99,14 +99,14 @@
 
         </div>
 
-        <LabelWithDivider text="Placeholder icon" />
-        <div class="flex justify-center space-x-4 mb-16">
+        <LabelWithDivider text="Placeholder icon" :marginTop="16"/>
+        <div class="flex justify-center space-x-4">
             <fwb-avatar />
             <fwb-avatar rounded />
         </div>
 
-        <LabelWithDivider text="Placeholder initials" />
-        <div class="flex justify-center space-x-4 mb-16">
+        <LabelWithDivider text="Placeholder initials" :marginTop="16"/>
+        <div class="flex justify-center space-x-4 ">
             <!-- 自定义类名，用于样式定位 -->
             <fwb-avatar initials="JD" class="avatar-primary" />
             <fwb-avatar initials="JD" rounded class="avatar-secondary" />
@@ -120,8 +120,8 @@
             </div>
         </div>
 
-        <LabelWithDivider text="Alternative Placeholder Icon" />
-        <div class="vp-raw flex justify-center space-x-4 mb-16">
+        <LabelWithDivider text="Alternative Placeholder Icon" :marginTop="16"/>
+        <div class="vp-raw flex justify-center space-x-4 ">
             <fwb-avatar>
             <template #placeholder>
                 <svg class="w-12 h-12" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">

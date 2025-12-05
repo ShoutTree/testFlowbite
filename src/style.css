@@ -86,3 +86,22 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+/* ========== 链接型 badge 样式覆盖（精准匹配自定义类） ========== */
+/* 1. yellow 类型（xs 尺寸） */
+a.badge-yellow.text-xs.font-semibold[href] {
+  background-color: #fef08a !important; /* yellow-200 背景 */
+  color: #78350f !important; /* yellow-900 文字 */
+  --tw-bg-opacity: 1 !important; /* 覆盖 Tailwind 透明度变量 */
+  --tw-hover-bg-opacity: 1 !important;
+}
+a.badge-yellow.text-xs.font-semibold[href]:hover {
+  background-color: #fde047 !important; /* yellow-300 hover 背景 */
+}
+
+
+/* 通用：清除下划线、默认间距 */
+a[href].bg-blue-100 {
+  text-decoration: none !important;
+  margin-right: 0 !important; /* 替换默认的 mr-2，按需调整 */
+}
