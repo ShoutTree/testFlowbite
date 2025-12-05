@@ -34,10 +34,11 @@ const route = useRoute()
 const toggle = () => emit('toggleDarkMode')
 
 const pages = [
-  { name: 'Alert', path: '/' },
+  { name: 'Avatar', path: '/Avatar' },
+  { name: 'Alert', path: '/Alert' },
   { name: 'Accordion', path: '/Accordion' },
   { name: 'AccordionDarkHover', path: '/AccordionDarkHover' },
-  { name: 'Avatar', path: '/Avatar' },
+  { name: 'Badge', path: '/Badge' },
 ]
 
 const selectedRoute = ref(route.path)

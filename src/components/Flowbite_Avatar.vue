@@ -1,9 +1,7 @@
 <template>
   <div class="w-full">
     <div class="flex flex-col">
-        <label class="block mb-2 font-medium text-gray-100 dark:text-gray-300 text-left">
-            不同类型和状态的Avatar
-        </label>
+        <LabelWithDivider text="不同类型和状态的Avatar" />
         <div class="mb-16 flex justify-center space-x-4 mb-16">
             <fwb-avatar img="/images/Ronaldo_avatar.jpg" />
             <fwb-avatar img="/images/Ronaldo_avatar.jpg" rounded />
@@ -24,11 +22,8 @@
             status="offline" />
         </div>
 
-        <hr class="my-8 border-gray-200/20 dark:border-gray-200/20 border-t-[0.5px]" />
+        <LabelWithDivider text="不同大小的Avatar" />
 
-        <label class="block mb-2 font-medium text-gray-100 dark:text-gray-300 text-left">
-            不同大小的Avatar
-        </label>
         <div class="flex justify-center items-center space-x-4 mb-16">
             <fwb-avatar img="/images/Ronaldo_avatar.jpg" 
             size="xs"
@@ -53,11 +48,8 @@
             status="offline" />
         </div>
 
-        <hr class="my-8 border-gray-200/20 dark:border-gray-200/20 border-t-[0.5px]" />
+        <LabelWithDivider text="Alternative text" />
 
-        <label class="block mb-2 font-medium text-gray-100 dark:text-gray-300 text-left">
-            Alternative text
-        </label>
         <div class="mt-16 flex justify-center space-x-4 mb-16">
             <fwb-avatar img="/images/Ronaldo_avatar1.jpg"         
             alt="Alternative text"
@@ -65,11 +57,7 @@
             status="online"/>
         </div>
 
-        <hr class="my-8 border-gray-200/20 dark:border-gray-200/20 border-t-[0.5px]" />
-
-        <label class="block mb-2 font-medium text-gray-100 dark:text-gray-300 text-left">
-            FwbAvatarStack:叠加的Avatar
-        </label>
+        <LabelWithDivider text="FwbAvatarStack:叠加的Avatar" />
         <div class="grid gap-2">
             <fwb-avatar-stack>
             <fwb-avatar img="/images/width_256/armor_stand.jpg" rounded stacked />
@@ -91,21 +79,17 @@
             <fwb-avatar-stack-counter href="#" total="99" />
             </fwb-avatar-stack>
 
-            <label class="block mb-2 font-medium text-gray-100 dark:text-gray-300 text-left">
-            Control distance of avatars, gap-big
-            </label>
+            <LabelWithDivider text="Control distance of avatars, gap-big" :show-divider="false"/>
             <div class="avatar-stack-gap-big">
                 <fwb-avatar-stack>
-                    <fwb-avatar img="/images/width_256/water_lily.jpeg"  stacked />
+                <fwb-avatar img="/images/width_256/water_lily.jpeg"  stacked />
                 <fwb-avatar img="/images/width_256/seashore.jpeg" rounded stacked />
                 <fwb-avatar img="/images/width_256/sunset_clouds.jpeg" rounded stacked />
                 </fwb-avatar-stack>
             </div>
 
-            <label class="block mb-2 font-medium text-gray-100 dark:text-gray-300 text-left">
-            Control distance of avatars, gap-small
-            </label>
-            <div class="avatar-stack-gap-small">
+            <LabelWithDivider text="Control distance of avatars, gap-small" :show-divider="false"/>
+            <div class="avatar-stack-gap-small mb-16">
                 <fwb-avatar-stack>
                 <fwb-avatar img="/images/width_256/shanghai.jpeg" rounded stacked />
                 <fwb-avatar img="/images/width_256/sunflower.jpeg" rounded stacked />
@@ -115,20 +99,13 @@
 
         </div>
 
-        <hr class="my-8 border-gray-200/20 dark:border-gray-200/20 border-t-[0.5px]" />
-
-        <label class="block mb-2 font-medium text-gray-100 dark:text-gray-300 text-left">
-            Placeholder icon
-        </label>
+        <LabelWithDivider text="Placeholder icon" />
         <div class="flex justify-center space-x-4 mb-16">
             <fwb-avatar />
             <fwb-avatar rounded />
         </div>
 
-        <hr class="my-8 border-gray-200/20 dark:border-gray-200/20 border-t-[0.5px]" />
-        <label class="block mb-2 font-medium text-gray-100 dark:text-gray-300 text-left">
-        Placeholder initials
-        </label>
+        <LabelWithDivider text="Placeholder initials" />
         <div class="flex justify-center space-x-4 mb-16">
             <!-- 自定义类名，用于样式定位 -->
             <fwb-avatar initials="JD" class="avatar-primary" />
@@ -143,11 +120,7 @@
             </div>
         </div>
 
-        <hr class="my-8 border-gray-200/20 dark:border-gray-200/20 border-t-[0.5px]" />
-
-        <label class="block mb-2 font-medium text-gray-100 dark:text-gray-300 text-left">
-            Alternative Placeholder Icon
-        </label>
+        <LabelWithDivider text="Alternative Placeholder Icon" />
         <div class="vp-raw flex justify-center space-x-4 mb-16">
             <fwb-avatar>
             <template #placeholder>
@@ -170,6 +143,7 @@
 
 <script setup>
     import { FwbAvatar, FwbAvatarStack, FwbAvatarStackCounter  } from 'flowbite-vue'
+    import LabelWithDivider from '@/components/LabelWithDivider.vue'
 </script>
 
 <style>
