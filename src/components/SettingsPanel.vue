@@ -39,6 +39,7 @@ const pages = [
   { name: 'Accordion', path: '/Accordion' },
   { name: 'AccordionDarkHover', path: '/AccordionDarkHover' },
   { name: 'Badge', path: '/Badge' },
+  { name: 'BreadCrumb', path: '/BreadCrumb' },
 ]
 
 const selectedRoute = ref(route.path)
