@@ -4,6 +4,8 @@ import router from './router'
 import App from './App.vue'
 import Flowbite from './components/Flowbite.vue'
 
+
+
 // import Flowbite_Accordion from './Flowbite_Accordion.vue'
 
 // import Flowbite_Accordion from './components/Flowbite_AccordionDarkHover.vue'
@@ -19,6 +21,7 @@ const app = createApp(App)
 // createApp(SettingsPanel)
 
 app.use(router)
+
 app.mount('#app')
 
   
