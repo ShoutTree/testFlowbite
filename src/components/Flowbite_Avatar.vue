@@ -137,8 +137,11 @@
             </template>
             </fwb-avatar>
         </div>
+
+        <LabelWithDivider text="" :marginTop="16" :showArrow="false"/>
     </div>
   </div>
+
 </template>
 
 <script setup>

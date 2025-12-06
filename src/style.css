@@ -44,7 +44,7 @@ h1 {
   line-height: 1.1;
 }
 
-button {
+/* button {
   border-radius: 8px;
   border: 1px solid transparent;
   padding: 0.6em 1.2em;
@@ -61,7 +61,7 @@ button:hover {
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
-}
+} */
 
 .card {
   padding: 2em;
@@ -87,6 +87,8 @@ button:focus-visible {
   }
 }
 
+/* ==========begin: Link模式的badge 修改颜色 */
+
 /* ========== 链接型 badge 样式覆盖（精准匹配自定义类） ========== */
 /* 1. yellow 类型（xs 尺寸） */
 a.badge-yellow.text-xs.font-semibold[href] {
@@ -99,9 +101,103 @@ a.badge-yellow.text-xs.font-semibold[href]:hover {
   background-color: #fde047 !important; /* yellow-300 hover 背景 */
 }
 
-
 /* 通用：清除下划线、默认间距 */
 a[href].bg-blue-100 {
   text-decoration: none !important;
   margin-right: 0 !important; /* 替换默认的 mr-2，按需调整 */
 }
+/*========== end: Link模式的badge 修改颜色 */
+
+/*========== begin: 面包屑样式*/
+nav[aria-label="Breadcrumb"] ol li a.text-sm.font-medium {
+  color: #6366f1 !important; /* 替换成你想要的主色（比如靛蓝） */
+  --tw-text-opacity: 1 !important; /* 覆盖 Tailwind 透明度变量 */
+}
+
+/* 2. 面包屑文字 hover 颜色 */
+nav[aria-label="Breadcrumb"] ol li a.text-sm.font-medium:hover {
+  color: #8090e8 !important; /* hover 加深色 */
+}
+
+/* 3. 暗黑模式 - 默认文字色 */
+nav[aria-label="Breadcrumb"] ol li a.dark\:text-gray-400 {
+  color: #a5b4fc !important; /* 暗黑模式文字色 */
+}
+
+/* 4. 暗黑模式 - hover 文字色 */
+nav[aria-label="Breadcrumb"] ol li a.dark\:hover\:text-white:hover {
+  color: #c7d2fe !important; /* 暗黑模式 hover 色 */
+}
+
+/* 5. 分隔符（箭头 SVG）颜色 */
+nav[aria-label="Breadcrumb"] ol li svg.text-gray-400 {
+  color: #94a3b8 !important; /* 分隔符颜色 */
+}
+
+/*========== end: 面包屑样式*/
+
+/*========== begin:修复按钮组（显示为紧挨这的独立按钮）的问题 */
+/* ========== 按钮组核心样式（保留你的现有配置） ========== */
+.fwb-button-group.inline-flex {
+  display: inline-flex !important;
+  border-radius: 0.5rem !important;
+  gap: 0 !important;
+  border: 1px solid #e5e7eb !important;
+  align-items: stretch !important; /* 强制所有子元素高度对齐 */
+}
+
+.fwb-button-group button.rounded-lg,
+.fwb-button-group .fwb-dropdown button.rounded-lg {
+  border-radius: 0 !important;
+  border: none !important;
+  margin: 0 !important;
+  padding: 0.5rem 1rem !important;
+  height: 100% !important;
+  line-height: 1.5 !important; /* 确保文字垂直居中 */
+}
+
+.fwb-button-group > *:first-child button.rounded-lg {
+  border-top-left-radius: 0.5rem !important;
+  border-bottom-left-radius: 0.5rem !important;
+}
+
+.fwb-button-group > *:last-child button.rounded-lg {
+  border-top-right-radius: 0.5rem !important;
+  border-bottom-right-radius: 0.5rem !important;
+}
+
+/* ========== 关键修复：双层兜底竖线（普通按钮 + Dropdown 全覆盖） ========== */
+/* 第一层：匹配按钮组内所有直接子按钮（普通按钮） */
+.fwb-button-group > button.rounded-lg:not(:last-child) {
+  border-right: 1px solid #e5e7eb !important; /* 普通按钮间竖线（浅色） */
+}
+
+/* 第二层：匹配按钮组内子容器（Dropdown）内的按钮 */
+.fwb-button-group > .fwb-dropdown:not(:last-child) button.rounded-lg {
+  border-right: 1px solid #e5e7eb !important; /* Dropdown 内按钮竖线（浅色） */
+}
+
+/* 第三层：兜底（所有非最后一个子元素内的按钮，兼容所有场景） */
+.fwb-button-group > *:not(:last-child) > button.rounded-lg {
+  border-right: 1px solid #e5e7eb !important; /* 终极兜底 */
+}
+
+/* ========== 暗黑模式竖线（同步三层匹配） ========== */
+@media (prefers-color-scheme: dark) {
+  .fwb-button-group.inline-flex {
+    border: 1px solid #374151 !important;
+  }
+  /* 普通按钮 */
+  .fwb-button-group > button.rounded-lg:not(:last-child) {
+    border-right: 1px solid #374151 !important;
+  }
+  /* Dropdown 内按钮 */
+  .fwb-button-group > .fwb-dropdown:not(:last-child) button.rounded-lg {
+    border-right: 1px solid #374151 !important;
+  }
+  /* 兜底 */
+  .fwb-button-group > *:not(:last-child) > button.rounded-lg {
+    border-right: 1px solid #374151 !important;
+  }
+}
+/*========== end:修复按钮组（显示为紧挨这的独立按钮）的问题 */

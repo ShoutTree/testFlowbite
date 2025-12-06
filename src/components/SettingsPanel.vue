@@ -33,14 +33,16 @@ const route = useRoute()
 
 const toggle = () => emit('toggleDarkMode')
 
-const pages = [
-  { name: 'Avatar', path: '/Avatar' },
-  { name: 'Alert', path: '/Alert' },
-  { name: 'Accordion', path: '/Accordion' },
-  { name: 'AccordionDarkHover', path: '/AccordionDarkHover' },
-  { name: 'Badge', path: '/Badge' },
-  { name: 'BreadCrumb', path: '/BreadCrumb' },
-]
+import { routes } from '@/router/index.ts'
+  
+// 复用路由数组里面的信息
+// 处理路由数组，提取需要的字段（过滤首页 + 格式转换）
+const pages = routes
+.map((route) => ({
+  name: route.meta.breadcrumb,
+  path: route.path
+}))
+
 
 const selectedRoute = ref(route.path)
 

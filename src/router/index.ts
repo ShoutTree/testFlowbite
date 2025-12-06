@@ -6,8 +6,10 @@ import Flowbite_AccordionDarkHover from '../components/Flowbite_AccordionDarkHov
 import Flowbite_Avatar from '../components/Flowbite_Avatar.vue'
 import Flowbite_Badge from '../components/Flowbite_Badge.vue'
 import Flowbite_BreadCrumb from '../components/Flowbite_BreadCrumb.vue'
+import Flowbite_Button from '../components/Flowbite_Button.vue'
+import Flowbite_ButtonGroup from '../components/Flowbite_ButtonGroup.vue'
 
-const routes = [
+export const routes = [
   { path: '/', 
     component: Flowbite_Home, 
     meta: { 
@@ -48,6 +50,18 @@ const routes = [
     component: Flowbite_BreadCrumb,
     meta: { 
         breadcrumb: 'BreadCrumb' 
+    }
+  },
+  { path: '/Button',
+    component: Flowbite_Button,
+    meta: { 
+        breadcrumb: 'Button' 
+    }
+  },
+  { path: '/ButtonGroup',
+    component: Flowbite_ButtonGroup,
+    meta: { 
+        breadcrumb: 'ButtonGroup' 
     }
   },
   

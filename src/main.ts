@@ -3,6 +3,7 @@ import './style.css'
 import router from './router'
 import App from './App.vue'
 import Flowbite from './components/Flowbite.vue'
+
 // import Flowbite_Accordion from './Flowbite_Accordion.vue'
 
 // import Flowbite_Accordion from './components/Flowbite_AccordionDarkHover.vue'
@@ -11,11 +12,13 @@ import Flowbite from './components/Flowbite.vue'
 // import Flowbite_Avatar from './components/Flowbite_Avatar.vue'
 
 
-createApp(App)
+const app = createApp(App)
 // createApp(Flowbite)
 // createApp(Flowbite_Accordion)
 // createApp(Flowbite_Alert)
 // createApp(SettingsPanel)
-  .use(router)
-  .mount('#app')
+
+app.use(router)
+app.mount('#app')
+
   
