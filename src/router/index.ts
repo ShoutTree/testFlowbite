@@ -9,6 +9,7 @@ import Flowbite_BreadCrumb from '../components/Flowbite_BreadCrumb.vue'
 import Flowbite_Button from '../components/Flowbite_Button.vue'
 import Flowbite_ButtonGroup from '../components/Flowbite_ButtonGroup.vue'
 import Flowbite_Card from '../components/Flowbite_Card.vue'
+import Flowbite_Carousel from '../components/Flowbite_Carousel.vue'
 
 export const routes = [
   { path: '/', 
@@ -71,6 +72,13 @@ export const routes = [
         breadcrumb: 'Card' 
     }
   },
+  { path: '/Carousel',
+    component: Flowbite_Carousel,
+    meta: {
+        breadcrumb: 'Carousel' 
+    }
+  },
+  
   
   
 ]
